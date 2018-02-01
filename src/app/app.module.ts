@@ -8,7 +8,8 @@ import { MainpageComponent } from './mainpage/mainpage.component';
 import { RouterModule, Routes } from '@angular/router';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatButtonModule} from '@angular/material/button';
-
+import {MatCardModule} from '@angular/material/card';
+import {MatListModule} from '@angular/material/list';
 const appRoutes: Routes = [
  
  
@@ -35,7 +36,7 @@ const appRoutes: Routes = [
     WaiterqueueComponent,
     MainpageComponent
   ],
-  imports: [
+  imports: [MatCardModule,MatListModule,
     MatButtonModule,
     MatGridListModule,
     RouterModule.forRoot(

@@ -1,0 +1,27 @@
+.button{
+
+
+
+
+
+}
+
+.card{
+
+    resize: both;
+    overflow: auto;
+}
+
+.title{
+
+    font-size: 40px;
+
+}
+
+.mat-card-content{
+
+ object-fit: fill;   
+overflow-wrap: auto;
+
+
+}
