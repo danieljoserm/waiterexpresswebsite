@@ -14,7 +14,9 @@ const appRoutes: Routes = [
  
  
   { path: '', component: MainpageComponent },
-  {path:'kitchenqueue',component:KitchenqueueComponent}
+  {path:'kitchenqueue',component:KitchenqueueComponent
+},{path:'waiterqueue',component:WaiterqueueComponent},
+{path:'mainpage',component:MainpageComponent}
 //  { path: 'hero/:id',      component: HeroDetailComponent },
 //  {
  //   path: 'heroes',
