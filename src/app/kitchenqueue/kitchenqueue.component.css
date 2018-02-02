@@ -7,21 +7,48 @@
 }
 
 .card{
-
+    
     resize: both;
     overflow: auto;
 }
 
 .title{
-
+    border: 0.5px solid black;
+    border-radius: 5px;
     font-size: 40px;
+    padding: 5px;
+    position: absolute;
+    right:10px;
+
 
 }
 
 .mat-card-content{
 
+ padding-top: 40px;   
  object-fit: fill;   
 overflow-wrap: auto;
 
 
+}
+.tiempo{
+    font-size: 40px;
+    position: absolute;
+    left:10px;
+   
+   
+}
+.mat-card-header{
+
+padding-bottom: 20px;
+
+}
+.listo{
+    width: 300px;
+}
+.menu{
+    font-size: 15px;
+    position: absolute;
+    left: 2px;
+    text-align: left;
 }
