@@ -10,6 +10,9 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatListModule} from '@angular/material/list';
+import {HttpModule,Http} from '@angular/http';
+
+
 const appRoutes: Routes = [
  
  
@@ -33,12 +36,15 @@ const appRoutes: Routes = [
 
 @NgModule({
   declarations: [
+    
     AppComponent,
     KitchenqueueComponent,
     WaiterqueueComponent,
     MainpageComponent
   ],
-  imports: [MatCardModule,MatListModule,
+  imports: [
+    HttpModule,
+    MatCardModule,MatListModule,
     MatButtonModule,
     MatGridListModule,
     RouterModule.forRoot(
