@@ -2,6 +2,7 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 .completepage{
-background-color: black;
+background-color: grey;
+
 
 }
