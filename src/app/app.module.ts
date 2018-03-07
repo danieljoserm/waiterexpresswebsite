@@ -12,7 +12,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatListModule} from '@angular/material/list';
 import {HttpModule,Http} from '@angular/http';
 
-
+import { RequestOptions } from '@angular/http';
 const appRoutes: Routes = [
  
  
@@ -43,6 +43,7 @@ const appRoutes: Routes = [
     MainpageComponent
   ],
   imports: [
+    
     HttpModule,
     MatCardModule,MatListModule,
     MatButtonModule,
