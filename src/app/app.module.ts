@@ -13,13 +13,15 @@ import {MatListModule} from '@angular/material/list';
 import {HttpModule,Http} from '@angular/http';
 
 import { RequestOptions } from '@angular/http';
+import { FeatureselectorComponent } from './featureselector/featureselector.component';
 const appRoutes: Routes = [
  
  
   { path: '', component: MainpageComponent },
   {path:'kitchenqueue',component:KitchenqueueComponent
 },{path:'waiterqueue',component:WaiterqueueComponent},
-{path:'mainpage',component:MainpageComponent}
+{path:'mainpage',component:MainpageComponent},
+{path:'featureselector',component:FeatureselectorComponent}
 //  { path: 'hero/:id',      component: HeroDetailComponent },
 //  {
  //   path: 'heroes',
@@ -40,7 +42,8 @@ const appRoutes: Routes = [
     AppComponent,
     KitchenqueueComponent,
     WaiterqueueComponent,
-    MainpageComponent
+    MainpageComponent,
+    FeatureselectorComponent
   ],
   imports: [
     
