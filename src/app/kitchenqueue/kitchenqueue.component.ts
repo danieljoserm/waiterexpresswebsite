@@ -45,12 +45,12 @@ export class KitchenqueueComponent implements OnInit {
        this.order[cantidadpedidos]= new order(this.pedidos[numero].id_usuario,this.pedidos[numero].id_restaurante);
        this.order[cantidadpedidos].add_productos(this.pedidos[numero].nombre,this.pedidos[numero].cantidad);
           
-       // this.request[numero]= new request(this.menuseleccionados[numero].id,this.menuseleccionados[numero].cantidad); 
+      
        
       }
       else{
        
-        //this.order[cantidadpedidos].add_productos(this.pedidos[numero].nombre,this.pedidos[numero].cantidad);
+        
         cantidadpedidos=cantidadpedidos+1;
       }
        pedido=this.pedidos[numero].id_pedido;
@@ -58,7 +58,7 @@ export class KitchenqueueComponent implements OnInit {
       console.log(this.pedidos[numero].id_pedido); 
       }
       
-      console.log(this.order);  
+  console.log(this.order);  
       
    
    console.log(this.pedidos);
