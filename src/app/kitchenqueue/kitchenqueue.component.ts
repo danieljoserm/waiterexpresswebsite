@@ -1,3 +1,4 @@
+import { RestService } from './../../providers/RestService';
 import { Component, OnInit } from '@angular/core';
 import {MatCardModule} from '@angular/material/card';
 import {MatListModule} from '@angular/material/list';
@@ -19,14 +20,21 @@ export class KitchenqueueComponent implements OnInit {
   menu : any;
   order:order[]=[];
   request:request;
+  restaurant:restaurant;
+  constructor(private router:Router, public http :Http,public RestService : RestService) {
+    console.log(this.RestService.GetChosenRestaurant());
 
-  constructor(private router:Router, public http :Http) {
-    let DataLocal = this.http.get("http://localhost:8080/get_orders.php").map(res => res.json()).subscribe(
+    this.restaurant=new restaurant(this.RestService.GetChosenRestaurant());
+
+    
+    let DataLocal = this.http.post("http://localhost:8080/get_orders.php",JSON.stringify(this.restaurant)).map(res => res.json()).subscribe(
       
    
      data=>{
       
     this.pedidos=data;
+    console.log("vea la vara");
+    console.log(this.pedidos);
     var cantidadpedidos=0;
     var pedido=this.pedidos[0].id_pedido;
     for (let numero = 0; numero < Object.keys(this.pedidos).length; numero++) {
@@ -79,43 +87,7 @@ export class KitchenqueueComponent implements OnInit {
    }
 
 
-   insertdata(){
 
-    //const httpOptions = {
-     // headers: new HttpHeaders({
-        //'Access-Control-Allow-Origin': '*'  
-        //'Content-Type':  'application/json',
-       // 'Authorization': 'my-auth-token'
-      //      })
-  //  };
-
-  //How to insert headers on the request as a client
-  let headers = new Headers({ 'Content-Type':  'application/json',
-  'Access-Control-Allow-Origin': '*'
-});
-  let options = new RequestOptions({ headers: headers });
-
-    var car = {restaurant_name:"Chelips", model:"500", color:"Andrea"};
-
-
-this.http.post("http://localhost:8080/retrieve_menu.php",JSON.stringify(car)).subscribe(
-
-data=>{
-  this.menu=JSON.parse(data.text());
-
-console.log(this.menu);
-
-},
-
-err=>{
-  console.log("no funciono");
-
-   }
-
-)
-
-
-   }
 
   ngOnInit() {
   }
@@ -163,4 +135,15 @@ export class request{
   ){}
   
   
+  }
+
+  export class restaurant{
+
+constructor(
+public restaurant_id
+
+
+){}
+
+
   }

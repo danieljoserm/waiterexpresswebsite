@@ -1,3 +1,4 @@
+import { RestService } from './../providers/RestService';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -11,7 +12,6 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatListModule} from '@angular/material/list';
 import {HttpModule,Http} from '@angular/http';
-
 import { RequestOptions } from '@angular/http';
 import { FeatureselectorComponent } from './featureselector/featureselector.component';
 const appRoutes: Routes = [
@@ -53,11 +53,11 @@ const appRoutes: Routes = [
     MatGridListModule,
     RouterModule.forRoot(
       appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
+      { enableTracing: false } // <-- debugging purposes only
     ),
     BrowserModule,MatToolbarModule
   ],
-  providers: [],
+  providers: [RestService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,11 +1,9 @@
 
 
   <mat-card class="card" >
-  
+   
 <mat-grid-list cols="1" rowHeight="50px">
-  <mat-grid-tile><button class="buttonmenu" mat-raised-button routerLink="/featureselector" routerLinkActive="active">Kitchen queue</button></mat-grid-tile>
-  <mat-grid-tile><button class="buttonmenu" mat-raised-button routerLink="/waiterqueue">Waiter queue</button></mat-grid-tile>
-  <mat-grid-tile><button class="buttonmenu" mat-raised-button>Estadisticas</button></mat-grid-tile>
-  <mat-grid-tile><button class="buttonmenu" mat-raised-button>Agregar o editar productos</button></mat-grid-tile>
+  <mat-grid-tile *ngFor="let restaurants1 of restaurants; let i=index" ><button class="buttonmenu" mat-raised-button routerLink="/featureselector" routerLinkActive="active" (click)="chooserestaurant(restaurants1.id)">{{restaurants[i].nombre}}</button></mat-grid-tile>
+
 </mat-grid-list>
 </mat-card>
